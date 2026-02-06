@@ -876,6 +876,30 @@
     </div>
 
     <script>
+
+    // 결혼식 날짜 설정 (2026년 9월 6일 12:00:00)
+    const weddingDate = new Date("Sept 6, 2026 12:00:00").getTime();
+
+    const updateTimer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = d;
+        document.getElementById("hours").innerHTML = h < 10 ? "0" + h : h;
+        document.getElementById("minutes").innerHTML = m < 10 ? "0" + m : m;
+        document.getElementById("seconds").innerHTML = s < 10 ? "0" + s : s;
+
+        if (distance < 0) {
+            clearInterval(updateTimer);
+            document.getElementById("timer").innerHTML = "저희의 결혼을 축하해주셔서 감사합니다.";
+        }
+    }, 1000);
+
         // Gallery functionality
         let currentSlide = 0;
         const slides = document.getElementById('gallerySlides');
