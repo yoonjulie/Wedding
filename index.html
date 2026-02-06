@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>결혼합니다</title>
+    <title>이현준♥최윤주 결혼합니다</title>
+    
+    <!-- 카카오톡, 페이스북 등 링크 공유시 썸네일 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="이현준♥최윤주 결혼합니다">
+    <meta property="og:description" content="2026년 9월 6일 일요일 오후 12시 | KU컨벤션웨딩홀">
+    <meta property="og:image" content="https://i.imgur.com/placeholder.jpg">
+    <meta property="og:url" content="https://yoonjulie.github.io/Wedding">
+    
+    <!-- 트위터 카드 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="이현준♥최윤주 결혼합니다">
+    <meta name="twitter:description" content="2026년 9월 6일 일요일 오후 12시 | KU컨벤션웨딩홀">
+    <meta name="twitter:image" content="https://i.imgur.com/placeholder.jpg">
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -150,6 +164,138 @@
             margin-top: 10px;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.7s forwards;
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            padding: 50px 40px;
+            background: linear-gradient(180deg, #fffbfd 0%, #ffffff 100%);
+        }
+
+        .calendar-container {
+            max-width: 350px;
+            margin: 0 auto;
+            background: var(--soft-cream);
+            border-radius: 20px;
+            padding: 30px 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .calendar-weekday {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+            padding: 8px 0;
+            font-weight: 500;
+        }
+
+        .calendar-weekday.sunday {
+            color: #ff6b6b;
+        }
+
+        .calendar-weekday.saturday {
+            color: #4a90e2;
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--text-dark);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .calendar-day.empty {
+            visibility: hidden;
+        }
+
+        .calendar-day.today {
+            background: #e8e4dc;
+            font-weight: 600;
+        }
+
+        .calendar-day.wedding-day {
+            background: var(--accent-gold);
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+            position: relative;
+        }
+
+        .calendar-day.wedding-day::after {
+            content: '💒';
+            position: absolute;
+            bottom: -18px;
+            font-size: 16px;
+        }
+
+        .calendar-day.sunday {
+            color: #ff6b6b;
+        }
+
+        .calendar-day.saturday {
+            color: #4a90e2;
+        }
+
+        .calendar-countdown {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .countdown-label {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .calendar-note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .calendar-note .highlight {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
 
         /* Message Section */
@@ -591,6 +737,86 @@
             <div class="wedding-time">오후 12시</div>
         </div>
 
+        <!-- Calendar -->
+        <div class="calendar-section">
+            <h2 class="section-title">Schedule</h2>
+            <div class="calendar-container">
+                <div class="calendar-header">2026년 9월</div>
+                
+                <div class="calendar-weekdays">
+                    <div class="calendar-weekday sunday">일</div>
+                    <div class="calendar-weekday">월</div>
+                    <div class="calendar-weekday">화</div>
+                    <div class="calendar-weekday">수</div>
+                    <div class="calendar-weekday">목</div>
+                    <div class="calendar-weekday">금</div>
+                    <div class="calendar-weekday saturday">토</div>
+                </div>
+                
+                <div class="calendar-days">
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day saturday">5</div>
+                    
+                    <div class="calendar-day sunday wedding-day">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day">8</div>
+                    <div class="calendar-day">9</div>
+                    <div class="calendar-day">10</div>
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day saturday">12</div>
+                    
+                    <div class="calendar-day sunday">13</div>
+                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">15</div>
+                    <div class="calendar-day">16</div>
+                    <div class="calendar-day">17</div>
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day saturday">19</div>
+                    
+                    <div class="calendar-day sunday">20</div>
+                    <div class="calendar-day">21</div>
+                    <div class="calendar-day">22</div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day">24</div>
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day saturday">26</div>
+                    
+                    <div class="calendar-day sunday">27</div>
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day">30</div>
+                </div>
+                
+                <div class="calendar-countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="cal-days">212</div>
+                        <div class="countdown-label">일</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="cal-hours">22</div>
+                        <div class="countdown-label">시간</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="cal-minutes">41</div>
+                        <div class="countdown-label">분</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="cal-seconds">24</div>
+                        <div class="countdown-label">초</div>
+                    </div>
+                </div>
+                
+                <div class="calendar-note">
+                    결혼식까지 <span class="highlight" id="cal-total-days">212일</span> 남았습니다.
+                </div>
+            </div>
+        </div>
+
         <!-- Message -->
         <div class="message-section">
             <p class="message">
@@ -646,19 +872,9 @@
             <div class="venue-name">KU컨벤션웨딩홀</div>
             <div class="venue-address">서울특별시 광진구 아차산로36길 5 (건국대학교 동문회관)</div>
             
-            <a href="https://map.kakao.com/link/map/KU컨벤션웨딩홀,37.5421,127.0757" target="_blank" style="display: block; text-decoration: none;">
-                <div id="map" class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.892799366586!2d127.07328831531447!3d37.54210097980198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca5b0e56561bb%3A0x16e065ab897c84e7!2z6rG0IOq1reyImOuMgO2VmOq1kCDrj5nrrLjtmozsrZA!5e0!3m2!1sko!2skr!4v1234567890123!5m2!1sko!2skr"
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; border-radius: 8px;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </a>
+            
+            <div id="map" class="map-container" onclick="window.open('https://map.kakao.com/link/map/KU컨벤션웨딩홀,37.5421,127.0757', '_blank')" style="cursor: pointer; background-image: url('https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=127.0757&MY=37.5421&WIDTH=400&HEIGHT=300&COORDSTM=WGS84&logo=kakao_logo'); background-size: cover; background-position: center;">
+            </div>
 
             <div style="text-align: center; margin-bottom: 20px;">
                 <a href="https://map.kakao.com/link/map/KU컨벤션웨딩홀,37.5421,127.0757" 
@@ -780,7 +996,7 @@
                         <div id="groom" class="account-detail">
                             <div class="account-detail-row">
                                 <span class="account-label">은행</span>
-                                <span class="account-value">○○은행</span>
+                                <span class="account-value">농협은행</span>
                             </div>
                             <div class="account-detail-row">
                                 <span class="account-label">예금주</span>
@@ -788,7 +1004,7 @@
                             </div>
                             <div class="account-detail-row">
                                 <span class="account-label">계좌번호</span>
-                                <span class="account-value" id="groom-account">000-0000-0000</span>
+                                <span class="account-value" id="groom-account">302-1464-5252-21</span>
                             </div>
                             <button class="copy-btn" onclick="copyAccount('groom-account')">계좌번호 복사</button>
                         </div>
@@ -805,7 +1021,7 @@
                         <div id="bride-father" class="account-detail">
                             <div class="account-detail-row">
                                 <span class="account-label">은행</span>
-                                <span class="account-value">○○은행</span>
+                                <span class="account-value">카카오뱅크</span>
                             </div>
                             <div class="account-detail-row">
                                 <span class="account-label">예금주</span>
@@ -813,7 +1029,7 @@
                             </div>
                             <div class="account-detail-row">
                                 <span class="account-label">계좌번호</span>
-                                <span class="account-value" id="bride-father-account">000-0000-0000</span>
+                                <span class="account-value" id="bride-father-account">3333-25-7268453</span>
                             </div>
                             <button class="copy-btn" onclick="copyAccount('bride-father-account')">계좌번호 복사</button>
                         </div>
@@ -825,7 +1041,7 @@
                         <div id="bride-mother" class="account-detail">
                             <div class="account-detail-row">
                                 <span class="account-label">은행</span>
-                                <span class="account-value">○○은행</span>
+                                <span class="account-value">국민은행</span>
                             </div>
                             <div class="account-detail-row">
                                 <span class="account-label">예금주</span>
@@ -833,7 +1049,7 @@
                             </div>
                             <div class="account-detail-row">
                                 <span class="account-label">계좌번호</span>
-                                <span class="account-value" id="bride-mother-account">000-0000-0000</span>
+                                <span class="account-value" id="bride-mother-account">487102-01-109374</span>
                             </div>
                             <button class="copy-btn" onclick="copyAccount('bride-mother-account')">계좌번호 복사</button>
                         </div>
@@ -845,7 +1061,7 @@
                         <div id="bride" class="account-detail">
                             <div class="account-detail-row">
                                 <span class="account-label">은행</span>
-                                <span class="account-value">○○은행</span>
+                                <span class="account-value">하나은행</span>
                             </div>
                             <div class="account-detail-row">
                                 <span class="account-label">예금주</span>
@@ -853,7 +1069,7 @@
                             </div>
                             <div class="account-detail-row">
                                 <span class="account-label">계좌번호</span>
-                                <span class="account-value" id="bride-account">000-0000-0000</span>
+                                <span class="account-value" id="bride-account">010-242396-77807</span>
                             </div>
                             <button class="copy-btn" onclick="copyAccount('bride-account')">계좌번호 복사</button>
                         </div>
@@ -876,6 +1092,31 @@
     </div>
 
     <script>
+        // D-Day Calculator for Calendar
+        function updateDday() {
+            const weddingDate = new Date('2026-09-06T12:00:00');
+            const today = new Date();
+            const diffTime = weddingDate - today;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const diffHours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const diffMinutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
+            const diffSeconds = Math.floor((diffTime % (1000 * 60)) / 1000);
+            
+            // 달력 카운트다운 업데이트
+            if (diffTime > 0) {
+                document.getElementById('cal-days').textContent = diffDays;
+                document.getElementById('cal-hours').textContent = diffHours;
+                document.getElementById('cal-minutes').textContent = diffMinutes;
+                document.getElementById('cal-seconds').textContent = diffSeconds;
+                document.getElementById('cal-total-days').textContent = diffDays + '일';
+            }
+        }
+        
+        // 페이지 로드시 D-Day 계산
+        updateDday();
+        // 1초마다 업데이트 (달력 초 단위 표시)
+        setInterval(updateDday, 1000);
+
         // Gallery functionality
         let currentSlide = 0;
         const slides = document.getElementById('gallerySlides');
@@ -896,30 +1137,75 @@
             goToSlide(currentSlide);
         }, 4000);
 
-        // RSVP Form
+        // RSVP Form - 구글 폼 연동
+        // 구글 폼 만드는 방법:
+        // 1. forms.google.com 접속
+        // 2. 새 양식 만들기
+        // 3. 질문 추가: 이름, 연락처, 참석여부, 인원수
+        // 4. 보내기 > 링크 복사
+        // 5. 아래 YOUR_GOOGLE_FORM_URL을 복사한 링크로 변경
+        
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('참석 여부가 전송되었습니다. 감사합니다!');
+            
+            // 구글 폼 URL을 여기에 입력하세요
+            const googleFormUrl = 'YOUR_GOOGLE_FORM_URL'; // 예: https://forms.gle/xxxxx
+            
+            // 구글 폼이 설정되어 있으면 새 창에서 열기
+            if (googleFormUrl !== 'YOUR_GOOGLE_FORM_URL') {
+                window.open(googleFormUrl, '_blank');
+                alert('구글 폼이 새 창에서 열립니다. 참석 여부를 입력해주세요!');
+            } else {
+                alert('참석 여부가 저장되었습니다. 감사합니다!\n\n(관리자: 구글 폼 URL을 설정해주세요)');
+            }
+            
             this.reset();
         });
 
         // Copy account number
+        // Copy account number - 개선된 버전
         function copyAccount(elementId) {
             const accountNumber = document.getElementById(elementId).textContent;
             
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(accountNumber).then(() => {
-                    alert('계좌번호가 복사되었습니다.');
-                });
+            // 방법 1: Clipboard API (최신 브라우저)
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(accountNumber)
+                    .then(() => {
+                        alert('✅ 계좌번호가 복사되었습니다.\n' + accountNumber);
+                    })
+                    .catch(() => {
+                        // Clipboard API 실패시 fallback
+                        fallbackCopy(accountNumber);
+                    });
             } else {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = accountNumber;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
+                // 방법 2: 전통적인 방식 (모바일, 구형 브라우저)
+                fallbackCopy(accountNumber);
+            }
+        }
+        
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
                 document.body.removeChild(textArea);
-                alert('계좌번호가 복사되었습니다.');
+                
+                if (successful) {
+                    alert('✅ 계좌번호가 복사되었습니다.\n' + text);
+                } else {
+                    // 복사 실패시 수동으로 복사하도록 안내
+                    alert('계좌번호: ' + text + '\n\n위 번호를 길게 눌러 복사해주세요.');
+                }
+            } catch (err) {
+                document.body.removeChild(textArea);
+                alert('계좌번호: ' + text + '\n\n위 번호를 길게 눌러 복사해주세요.');
             }
         }
 
